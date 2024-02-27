@@ -114,27 +114,27 @@ footer p {
 .btn-outline-warning {
     color: hsl(212, 84%, 48%) !important;
     border-color: hsl(212, 84%, 48%) !important;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
 
 .btn-outline-warning:hover {
-    color: black;
+    color: white;
     background-color: hsl(212, 84%, 48%) !important; 
     border-color: hsl(212, 84%, 48%) !important;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
 
 .btn-outline-info {
     color: #17a2b8;
     border-color: #17a2b8;
-	margin-bottom:50px;
+	margin-bottom:80px;
 }
 
 .btn-outline-info:hover {
     color: #fff;
     background-color: #17a2b8;
     border-color: #17a2b8;
-	margin-bottom:50px;
+	margin-bottom:80px;
 }
 
 .btn-outline-primary {
