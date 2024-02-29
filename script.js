@@ -91,6 +91,23 @@ function throwRock() {
     playGame(playerChoice, computerChoice);
   }
   
+  // gives the results for what will happen every 5 rounds
+// Inside your script.js file
+function game(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+      results.textContent = "It's a tie!";
+    } else if (
+      (playerSelection === "rock" && computerSelection === "scissors") ||
+      (playerSelection === "paper" && computerSelection === "rock") ||
+      (playerSelection === "scissors" && computerSelection === "paper")
+    ) {
+      playerScore++; 
+      results.textContent = "You win! " + playerSelection + " beats " + computerSelection;
+    } else {
+      computerScore++;
+      results.textContent = "Computer wins! " + computerSelection + " beats " + playerSelection;
+    }
+  }
   
   // reset the scores at the end of every round 
 function resetScores() {

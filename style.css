@@ -1,104 +1,63 @@
-html {
-	font-size: 17px;
-
-}
 body {
-	font-family: 'Lato', sans-serif; 
+	font-family: 'Righteous', sans-serif; /* Google font */
+	background-color: rgb(111, 185, 111);
 	margin: 0;
-}
-img {
-	max-width: 100%;
-}
-h1 {
-	font-size: 2.4rem; 
-	line-height: 1.2;
-	color: #fff;
-	width: 80%;
-	margin: 1.6rem auto 0;
-	text-align: center;
-	margin-top:40px;
-}
-nav {
-	font-size: 1.1rem;
-}
-nav ul {
 	padding: 0;
-	margin: 0;
-	margin-bottom: .65rem;
-}
-nav li {
-	line-height: 1.5;
-}
-nav li a {
-	padding: .29rem .59rem;
-	color: #fff;
-}
-.content-wrapper {
+  }
+  
+  .container {
 	max-width: 960px;
-	margin: auto;
-	padding: 0 1.8rem;
-}
-main .content-wrapper {
-	max-width: 42em;
-}
-
-.hero {
-	text-align: center;
-	padding: 2.4rem 0;
-	background:
-		linear-gradient(
-			rgba(0, 0, 0, .48), 
-			rgba(0, 0, 0, .48)
-		), 
-		url('header\ background\ image.webp') no-repeat 10% center ;
-	background-size: cover;
-    color:white;
-}
-.hero p {
+	margin: 0 auto;
+  }
+  
+  .description {
+	margin-top: 50px;
+  }
+  
+  .btn-success {
+	margin-top: 20px;
+  }
+  
+  #game-container {
+	margin-top: 50px;
+  }
+  
+  .btn {
+	margin: 0 5px;
+  }
+  
+  #results {
+	font-size: 20px;
+	margin-bottom: 20px;
+  }
+  
+  #scores {
+	margin-top: 20px;
+  }
+  
+  footer {
+	background-color: #343a40;
 	color: #fff;
-	width: 80%;
-	margin: 0 auto 1.6rem;
-	font-size: 1.4rem;
-	line-height: 1.5;
-	font-weight: 300;
-}
-main {
-	box-sizing: border-box;
-	padding: 30px 0;
-	border-bottom: solid 1px #dcdcdc;
-}
-
-footer {
-	padding: 1.2rem;
-	background-color: rgb(121, 196, 121);
-}
-footer p {
-	font-size: .94rem;
-	font-weight: 300;
-	color:black;
+	padding: 20px 0;
 	text-align: center;
-	margin-bottom: 0;
-}
-
-@media (min-width: 540px) { 
-	header .logo {
-		float: left;
-	}
-	nav {
-		float: right;
-		margin-top: 21px;
-	}
-	nav ul li {
-		display: inline-block;
-	}
-	figure {
-		float: left;
-		width: 40%;
-		min-width: 225px;
-		margin-right: 1.53rem;
-	}
-}
-
+	bottom: 0;
+	width: 100%; /* Set width to 100% */
+	left: 0; /* Ensure it starts from the left edge */
+	right: 0; /* Ensure it ends at the right edge */
+  }
+  
+  .github-link {
+	margin-top: 10px;
+  }
+  
+  .github-link a {
+	color: #fff;
+  }
+  
+  .github-link img {
+	margin-right: 5px;
+  }
+  
 /* The Input Username Text */
 #response-text {
     font-size: 24px;
@@ -109,42 +68,9 @@ footer p {
 }
 /* End of Username Text Code */
 
-/* Rock paper scissors buttons start */ 
-
-.btn-outline-warning {
-    color: hsl(212, 84%, 48%) !important;
-    border-color: hsl(212, 84%, 48%) !important;
-	margin-bottom: 80px;
-}
-
-.btn-outline-warning:hover {
-    color: white;
-    background-color: hsl(212, 84%, 48%) !important; 
-    border-color: hsl(212, 84%, 48%) !important;
-	margin-bottom: 80px;
-}
-
-.btn-outline-info {
-    color: #17a2b8;
-    border-color: #17a2b8;
-	margin-bottom:80px;
-}
-
-.btn-outline-info:hover {
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-	margin-bottom:80px;
-}
-
-.btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-/* Rock paper scissors buttons end */ 
+.kode-mono-code {
+	font-family: "Kode Mono", monospace;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+  }
