@@ -12,67 +12,87 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <div id="container text-center"></div>
-  <div class="row text-center"></div>
+  <div id="container text-center">
+    <div class="row text-center"></div>
 
-  <div class="description text-center">
-    <h1>Play Rock, Paper, Scissors</h1>
-    <p>Welcome to the ultimate Rock, Paper, Scissors experience! Our website offers an exhilarating interactive game
-      where you can challenge your wit against the computer. Simply start by entering your name, and then choose your
-      weapon of choice - whether it's Rock, Paper, or Scissors. The game will then reveal the computer's selection, and
-      the winner will be determined based on the classic rules of the game. With a sleek and intuitive design, our
-      website guarantees endless entertainment for players of all ages. Get ready to engage in a battle of strategy and
-      luck, and may the best player emerge victorious!
-    </p>
+    <div class="description text-center">
+      <h1>Play Rock, Paper, Scissors</h1>
+      <p>Welcome to the ultimate Rock, Paper, Scissors experience! Our website offers an exhilarating interactive game
+        where you can challenge your wit against the computer. Simply start by entering your name, and then choose your
+        weapon of choice - whether it's Rock, Paper, or Scissors. The game will then reveal the computer's selection,
+        and
+        the winner will be determined based on the classic rules of the game. With a sleek and intuitive design, our
+        website guarantees endless entertainment for players of all ages. Get ready to engage in a battle of strategy
+        and
+        luck, and may the best player emerge victorious!
+      </p>
+    </div>
   </div>
-  </div>
-<!--onclick user name start-->
+  <!--onclick user name start-->
   <div class="text-center">
     <button onclick="userInput()" class="btn btn-success">Input Your Name</button>
   </div>
-</div>
-<!--onclick user name end-->
+  </div>
+  <!--onclick user name end-->
 
   <div class="name"></div>
   <div class="container text-center">
     <div class="display-4" id="response-text"></div>
     <img src="rock paper scissors images.png" alt="Image Description" id="response-image" class="img-fluid mb-4">
-    
-  <!-- rock, paper, scissors buttons -->
-  <div id="game-container">
-    <div id="results"></div>
-    <button class="btn" onclick="throwRock()">Rock</button>
-    <button class="btn" onclick="throwPaper()">Paper</button>
-    <button class="btn" onclick="throwScissors()">Scissors</button>
-    <div id="scores">
-        <p>Your Score: <span id="player-score">0</span></p>
-        <p>Computer Score: <span id="computer-score">0</span></p>
+
+
+
+    <div class="score">
+      <div class="playerScore">
+        <h2>Player</h2>
+        <p class="p-count count">0</p>
+
+      </div>
+      <div class="computerScore">
+        <h2>Computer</h2>
+        <p class="c-count count">0</p>
+
+      </div>
     </div>
-</div>
-<!--reset button start-->
-<div id="results"></div>
+
+    <div class="move">Choose your move</div>
+
+    <!--Number of moves left before game ends -->
+    <div class="movesleft">Moves Left: 10 </div>
+
+    <!-- rock, paper, scissors buttons -->
+    <div class="options">
+      <button class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+    </div>
+
+
+    <!--reset button start-->
+    <div id="results"></div>
     <button type="button" class="btn btn-secondary" onclick="resetScores()">Reset Score</button>
     <script src="script.js"></script>
-  <!--result button end-->
+    <!--reset button end-->
 
-   
-  <!--Final result of game -->
-  <div class="result"></div>
-         
-   <!--Reload the game -->
-   <button class="reload"></button>
 
+    <!--Final result of game -->
+    <div class="result"></div>
+
+    <!--Reload the game -->
+    <button class="reload"></button>
+  </div>
 
   <footer>
     <div class="container text-center">
       <p>&copy; 2024 Rock, Paper, Scissors. All Rights Reserved.</p>
       <div class="github-link">
         <a href="https://github.com/s-jaswal" target="_blank" rel="noopener noreferrer">
-          <img src="images/github-icon-image.png" alt="GitHub Icon" width="30" height="30"> Follow Me On GitHub
+          <img src="github icon.jpg" alt="GitHub Icon" width="30" height="30"> Follow Me On GitHub
         </a>
       </div>
     </div>

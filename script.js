@@ -1,15 +1,15 @@
 // onclick user name button start //
 function userInput() {
-    var name = prompt("Please enter your name:");
-    if (name !== null) {
-        document.getElementById("response-text").innerText = "Hello, " + name + "!";
-    }
+  var name = prompt("Please enter your name:");
+  if (name !== null) {
+    document.getElementById("response-text").innerText = "Hello, " + name + "!";
+  }
 }
-// Let or const is recommended for variable declaration
+// Let or const for variable declaration
 const game = () => {
-let playerScore = 0;
-let computerScore = 0;
-let moves= 0;
+  let playerScore = 0;
+  let computerScore = 0;
+  let moves = 0;
 }
 
 // script.js
@@ -21,17 +21,26 @@ const playGame = () => {
   const computerOptions = ['rock', 'paper', 'scissors']
 }
 
-function computerSelection() {
-  const choices = ['rock', 'paper', 'scissors'];
-  const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
-}
+playerOptions.forEach(option => {
+  option.addEventListener('click', function () {
 
-function playRound(playerSelection, computerSelection) {
-  // Add logic to determine winner based on playerSelection and computerSelection
-  // Update the results element to display the winner
-}
+      const movesLeft = document.querySelector('.movesleft');
+      moves++;
+      movesLeft.innerText = `Moves Left: ${10 - moves}`;
 
+
+      const choiceNumber = Math.floor(Math.random() * 3);
+      const computerChoice = computerOptions[choiceNumber];
+
+      // Function to check who wins
+      winner(this.innerText, computerChoice)
+
+      // Calling gameOver function after 10 moves
+      if (moves == 10) {
+          gameOver(playerOptions, movesLeft);
+      }
+  })
+})
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const playerSelection = button.textContent.toLowerCase(); // Get button text content and convert to lowercase
@@ -39,69 +48,60 @@ buttons.forEach(button => {
     playRound(playerSelection, computerChoice);
   });
 });
-
-// gives the results for what will happen every 5 rounds
-// Inside your script.js file
-function game(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-      results.textContent = "It's a tie!";
-    } else if (
-      (playerSelection === "rock" && computerSelection === "scissors") ||
-      (playerSelection === "paper" && computerSelection === "rock") ||
-      (playerSelection === "scissors" && computerSelection === "paper")
-    ) {
-      playerScore++; 
-      results.textContent = "You win! " + playerSelection + " beats " + computerSelection;
-    } else {
+// Function to decide winner
+const winner = (player, computer) => {
+  const result = document.querySelector('.result');
+  const playerScoreBoard = document.querySelector('.p-count');
+  const computerScoreBoard = document.querySelector('.c-count');
+  player = player.toLowerCase();
+  computer = computer.toLowerCase();
+  if (player === computer) {
+    result.textContent = 'Tie'
+  }
+  else if (player == 'rock') {
+    if (computer == 'paper') {
+      result.textContent = 'Computer Won';
       computerScore++;
-      results.textContent = "Computer wins! " + computerSelection + " beats " + playerSelection;
+      computerScoreBoard.textContent = computerScore;
+
+    } else {
+      result.textContent = 'Player Won'
+      playerScore++;
+      playerScoreBoard.textContent = playerScore;
     }
   }
-
-  // Helper function to update computer score and display success message
-function updateComputerScore(computerSelection, playerSelection) {
-    computerScore++; // Update computer score
-    results.innerHTML = "The computer wins! " + computerSelection + " beats " + playerSelection; // success message
-
-
+  else if (player == 'scissors') {
+    if (computer == 'rock') {
+      result.textContent = 'Computer Won';
+      computerScore++;
+      computerScoreBoard.textContent = computerScore;
+    } else {
+      result.textContent = 'Player Won';
+      playerScore++;
+      playerScoreBoard.textContent = playerScore;
+    }
   }
-  if (
-    (computerSelection === "rock" && playerSelection === "scissors") ||
-    (computerSelection === "paper" && playerSelection === "rock") ||
-    (computerSelection === "scissors" && playerSelection === "paper")
-  ) {
-    updateComputerScore(computerSelection, playerSelection);
+  else if (player == 'paper') {
+    if (computer == 'scissors') {
+      result.textContent = 'Computer Won';
+      computerScore++;
+      computerScoreBoard.textContent = computerScore;
+    } else {
+      result.textContent = 'Player Won';
+      playerScore++;
+      playerScoreBoard.textContent = playerScore;
+    }
   }
-
-  // Inside your script.js file
-// storing the user selection as a function
-function throwRock() {
-    playerChoice = "rock";
-    computerChoice = computerSelection();
-    playGame(playerChoice, computerChoice);
-  }
-  
-  function throwPaper() {
-    playerChoice = "paper";
-    computerChoice = computerSelection();
-    playGame(playerChoice, computerChoice);
-  }
-  
-  function throwScissors() {
-    playerChoice = "scissors";
-    computerChoice = computerSelection();
-    playGame(playerChoice, computerChoice);
-  }
-  
-  // the game is over 
+}
+// the game is over 
 const gameOver = (playerOptions, movesLeft) => {
- 
+
   const chooseMove = document.querySelector('.move');
   const result = document.querySelector('.result');
   const reloadBtn = document.querySelector('.reload');
 
   playerOptions.forEach(option => {
-      option.style.display = 'none';
+    option.style.display = 'none';
   })
 
 
@@ -109,23 +109,23 @@ const gameOver = (playerOptions, movesLeft) => {
   movesLeft.style.display = 'none';
 
   if (playerScore > computerScore) {
-      result.style.fontSize = '2rem';
-      result.innerText = 'You Won The Game'
-      result.style.color = '#308D46';
+    result.style.fontSize = '2rem';
+    result.innerText = 'You Won The Game'
+    result.style.color = '#308D46';
   }
   else if (playerScore < computerScore) {
-      result.style.fontSize = '2rem';
-      result.innerText = 'You Lost The Game';
-      result.style.color = 'red';
+    result.style.fontSize = '2rem';
+    result.innerText = 'You Lost The Game';
+    result.style.color = 'red';
   }
   else {
-      result.style.fontSize = '2rem';
-      result.innerText = 'Tie';
-      result.style.color = 'grey'
+    result.style.fontSize = '2rem';
+    result.innerText = 'Tie';
+    result.style.color = 'grey'
   }
   reloadBtn.innerText = 'Restart';
   reloadBtn.style.display = 'flex'
   reloadBtn.addEventListener('click', () => {
-      window.location.reload();
+    window.location.reload();
   })
 }
