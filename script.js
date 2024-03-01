@@ -1,5 +1,3 @@
-console.log()
-
 // onclick user name button start //
 function userInput() {
     var name = prompt("Please enter your name:");
@@ -7,8 +5,6 @@ function userInput() {
         document.getElementById("response-text").innerText = "Hello, " + name + "!";
     }
 }
-// script.js
-
 // Let or const is recommended for variable declaration
 let playerScore = 0;
 let computerScore = 0;
@@ -100,7 +96,7 @@ function game(playerSelection, computerSelection) {
       (playerSelection === "rock" && computerSelection === "scissors") ||
       (playerSelection === "paper" && computerSelection === "rock") ||
       (playerSelection === "scissors" && computerSelection === "paper")
-    ) {
+    ) { 
       playerScore++; 
       results.textContent = "You win! " + playerSelection + " beats " + computerSelection;
     } else {
@@ -111,7 +107,7 @@ function game(playerSelection, computerSelection) {
   
   // reset the scores at the end of every round 
 function resetScores() {
-    // Reset player and computer scores
+    // Reset player and computer scores 
     playerScore = 0;
     computerScore = 0;
   
