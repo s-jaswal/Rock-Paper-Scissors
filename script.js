@@ -1,59 +1,55 @@
-// onclick user name button start //
+// Function to handle user input
 function userInput() {
   var name = prompt("Please enter your name:");
   if (name !== null) {
     document.getElementById("response-text").innerText = "Hello, " + name + "!";
   }
 }
+
 // Let or const for variable declaration
 const game = () => {
   let playerScore = 0;
   let computerScore = 0;
   let moves = 0;
-}
 
-// script.js
-const playGame = () => {
-  const rockBtn = document.querySelector('.rock');
-  const paperBtn = document.querySelector('.paper');
-  const scissorBtn = document.querySelector('.scissor');
-  const playerOptions = [rockBtn, paperBtn, scissorBtn];
-  const computerOptions = ['rock', 'paper', 'scissors']
-}
+  const playGame = () => {
+    const rockBtn = document.querySelector('.rock');
+    const paperBtn = document.querySelector('.paper');
+    const scissorBtn = document.querySelector('.scissor');
+    const playerOptions = [rockBtn, paperBtn, scissorBtn];
+    const computerOptions = ['rock', 'paper', 'scissors'];
 
-playerOptions.forEach(option => {
-  option.addEventListener('click', function () {
+    playerOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        const movesLeft = document.querySelector('.movesleft');
+        moves++;
+        movesLeft.innerText = `Moves Left: ${5 - moves}`;
 
-      const movesLeft = document.querySelector('.movesleft');
-      moves++;
-      movesLeft.innerText = `Moves Left: ${10 - moves}`;
+        const choiceNumber = Math.floor(Math.random() * 3);
+        const computerChoice = computerOptions[choiceNumber];
 
+        // Function to check who wins
+        winner(this.innerText, computerChoice);
 
-      const choiceNumber = Math.floor(Math.random() * 3);
-      const computerChoice = computerOptions[choiceNumber];
-
-      // Function to check who wins
-      winner(this.innerText, computerChoice)
-
-      // Calling gameOver function after 10 moves
-      if (moves == 10) {
+        // Calling gameOver function after 5 moves
+        if (moves == 5) {
           gameOver(playerOptions, movesLeft);
-      }
-  })
-})
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    const playerSelection = button.textContent.toLowerCase(); // Get button text content and convert to lowercase
-    const computerChoice = computerSelection();
-    playRound(playerSelection, computerChoice);
-  });
-});
+        }
+      });
+    });
+  };
+
+  playGame(); // Call the playGame function to start the game
+};
+
+game(); // Call the game function to initialize the game
+
 // Function to decide winner
 const winner = (player, computer) => {
   const result = document.querySelector('.result');
   const playerScoreBoard = document.querySelector('.p-count');
   const computerScoreBoard = document.querySelector('.c-count');
-  player = player.toLowerCase();
+  player = player.toLowerCase();  
   computer = computer.toLowerCase();
   if (player === computer) {
     result.textContent = 'Tie'
@@ -93,6 +89,7 @@ const winner = (player, computer) => {
     }
   }
 }
+
 // the game is over 
 const gameOver = (playerOptions, movesLeft) => {
 

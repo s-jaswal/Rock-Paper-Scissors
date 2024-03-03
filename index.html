@@ -18,7 +18,7 @@
 
 <body>
   <div id="container text-center">
-    <div class="row text-center"></div>
+    <div class="row text-center">
 
     <div class="description text-center">
       <h1>Play Rock, Paper, Scissors</h1>
@@ -32,58 +32,48 @@
         luck, and may the best player emerge victorious!
       </p>
     </div>
-  </div>
   <!--onclick user name start-->
   <div class="text-center">
     <button onclick="userInput()" class="btn btn-success">Input Your Name</button>
   </div>
-  </div>
   <!--onclick user name end-->
 
-  <div class="name"></div>
-  <div class="container text-center">
-    <div class="display-4" id="response-text"></div>
-    <img src="rock paper scissors images.png" alt="Image Description" id="response-image" class="img-fluid mb-4">
-
-
-
-    <div class="score">
-      <div class="playerScore">
-        <h2>Player</h2>
-        <p class="p-count count">0</p>
-
-      </div>
-      <div class="computerScore">
-        <h2>Computer</h2>
-        <p class="c-count count">0</p>
-
+  <div class="name">
+    <div class="container text-center">
+      <div class="display-4" id="response-text">
+        <img src="rock paper scissors images.png" alt="Image Description" id="response-image" class="img-fluid mb-4">
       </div>
     </div>
+  </div>
 
-    <div class="move">Choose your move</div>
-
-    <!--Number of moves left before game ends -->
-    <div class="movesleft">Moves Left: 10 </div>
-
-    <!-- rock, paper, scissors buttons -->
-    <div class="options">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+  <div class="score">
+    <div class="playerScore">
+      <h2>Player</h2>
+      <p class="p-count count">0</p>
     </div>
+    <div class="computerScore">
+      <h2>Computer</h2>
+      <p class="c-count count">0</p>
+    </div>
+  </div>
 
+  <div class="move">Choose your move</div>
 
-    <!--reset button start-->
-    <div id="results"></div>
-    <button type="button" class="btn btn-secondary" onclick="resetScores()">Reset Score</button>
-    <script src="script.js"></script>
-    <!--reset button end-->
+  <!--Number of moves left before game ends -->
+  <div class="movesleft">Moves Left: 5 </div>
 
+  <!-- rock, paper, scissors buttons -->
+  <div class="options">
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
+  </div>
 
-    <!--Final result of game -->
-    <div class="result"></div>
+  <!--Final result of game -->
+  <div class="result"></div>
 
-    <!--Reload the game -->
+  <!--Reload the game -->
+  <div>
     <button class="reload"></button>
   </div>
 
@@ -91,13 +81,11 @@
     <div class="container text-center">
       <p>&copy; 2024 Rock, Paper, Scissors. All Rights Reserved.</p>
       <div class="github-link">
-        <a href="https://github.com/s-jaswal" target="_blank" rel="noopener noreferrer">
-          <img src="github icon.jpg" alt="GitHub Icon" width="30" height="30"> Follow Me On GitHub
-        </a>
+        <a href="https://github.com/s-jaswal" target="_blank" rel="noopener noreferrer"></a>
+          <img src="github icon.jpg" alt="GitHub Icon" width="30" height="30"> Follow Me On Github</img>
       </div>
     </div>
   </footer>
-</body>
 
 <!-- Bootstrap JavaScript Libraries -->
 <script src="script.js"></script>
@@ -107,5 +95,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
   integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
-
 </html>
